@@ -1,1 +1,24 @@
+name: Static CI/CD
 
+on:
+  push:
+    branches: [ master]
+  pull_request:
+    branches: [ master]
+
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Deploy to VM
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USER }}
+        key: ${{ secrets.KEY }}
+        script: |
+          cd /var/www/html
+          git clone maxoba/stop-watch-app
+          sudo systemctl restart nginx
