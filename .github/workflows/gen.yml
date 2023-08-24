@@ -16,9 +16,9 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
 
-        host: ${{ secrets.IP_ADDRESS }}
-        username: ${{ secrets.ADMIN_USERNAME }}
-        key: ${{ secrets.key }}
+        host: ${{ secrets.HOST}}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY}}
         script: |
           cd /var/www/html/weather
           git pull origin master
