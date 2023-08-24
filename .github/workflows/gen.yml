@@ -19,5 +19,5 @@ on:
         username: ${{ secrets.ADMIN_USERNAME }}
         key: ${{ secrets.key }}
         script: |
-          cd /var/www/html/weaher
+          cd /var/www/html/weather
           git pull origin master
