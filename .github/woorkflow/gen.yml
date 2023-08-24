@@ -20,4 +20,4 @@ on:
         key: ${{ secrets.key }}
         script: |
           cd /var/www/html/weaher
-          git pull origin mastere
+          git pull origin master
