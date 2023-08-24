@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ master]
 
-
+jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
@@ -15,6 +15,7 @@ on:
     - name: Deploy to VM
       uses: appleboy/ssh-action@master
       with:
+
         host: ${{ secrets.IP_ADDRESS }}
         username: ${{ secrets.ADMIN_USERNAME }}
         key: ${{ secrets.key }}
